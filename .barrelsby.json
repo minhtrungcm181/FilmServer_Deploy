@@ -1,0 +1,5 @@
+{
+  "directory": ["./src/common", "./src/config", "./src/entities", "./src/logger"],
+  "exclude": ["./src/modules", "./src/modules/public", "./src/test"],
+  "delete": true
+}
