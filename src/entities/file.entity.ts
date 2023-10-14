@@ -1,4 +1,4 @@
-import {BaseEntity} from '../../../entities';
+import {BaseEntity} from '.';
 import {IsNotEmpty, IsNumber} from 'class-validator';
 import {Column, Entity} from 'typeorm';
 

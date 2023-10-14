@@ -4,7 +4,7 @@ import {Injectable} from '@nestjs/common';
 import {InjectRepository} from '@nestjs/typeorm';
 import {Readable} from 'stream';
 import {Repository} from 'typeorm';
-import {File} from './entities/file.entity';
+import {File} from '../../entities/file.entity';
 
 @Injectable()
 export class FileService {

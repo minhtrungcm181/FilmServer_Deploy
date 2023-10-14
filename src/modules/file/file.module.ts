@@ -8,7 +8,7 @@ import {TypeOrmModule} from '@nestjs/typeorm';
 import * as multerS3 from 'multer-s3';
 import {v4 as uuidv4} from 'uuid';
 import {CookieGuard} from './cookie.guard';
-import {File} from './entities/file.entity';
+import {File} from '../../entities/file.entity';
 import {FileController} from './file.controller';
 import {FileRepository} from './file.repository';
 import {FileService} from './file.service';

@@ -8,19 +8,15 @@ import {TypeOrmModule} from '@nestjs/typeorm';
 import {AppService} from './app.service';
 import {AppExceptionFilter} from './common/exception.filter';
 import {appValidationPipe} from './common/validation.pipe';
-import {TypeOrmConnectionsFactory} from './config/typeorm-connection.factory';
 import {PublicModule} from './public/public.module';
 import {AppController} from '@app.controller';
+import { dataSourceOptions } from '@config/data-source';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
 
-    TypeOrmModule.forRootAsync({
-      imports: [ConfigModule],
-      inject: [],
-      useClass: TypeOrmConnectionsFactory,
-    }),
+    TypeOrmModule.forRoot(dataSourceOptions),
 
     PublicModule,
     AuthModule,

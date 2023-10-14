@@ -18,7 +18,7 @@ import {FileInterceptor} from '@nestjs/platform-express';
 import {Response} from 'express';
 import 'multer';
 import {FormDataRequest} from 'nestjs-form-data';
-import {File} from './entities/file.entity';
+import {File} from '../../entities/file.entity';
 import {FileRepository} from './file.repository';
 import {FileService} from './file.service';
 import {GetSharedFilesDto} from './dto/get-shared-files';
