@@ -17,14 +17,14 @@ export class File extends BaseEntity {
     storageClass: string,
     location: string,
     etag: string,
-    movieCurrentEp: number,
-    movieDescription: string,
-    movieLogo: string,
-    movieM3U8: string,
-    movieRating: string,
-    movieTitle: string,
-    movieTotalEp: number,
-    movieYear: string,
+    // movieCurrentEp: number,
+    // movieDescription: string,
+    // movieLogo: string,
+    // movieM3U8: string,
+    // movieRating: string,
+    // movieTitle: string,
+    // movieTotalEp: number,
+    // movieYear: string,
   ) {
     super();
     this.fieldname = fieldname;
@@ -39,14 +39,14 @@ export class File extends BaseEntity {
     this.storageClass = storageClass;
     this.location = location;
     this.etag = etag;
-    this.movieCurrentEp = movieCurrentEp;
-    this.movieDescription = movieDescription;
-    this.movieLogo = movieLogo;
-    this.movieM3U8 = movieM3U8;
-    this.movieRating = movieRating;
-    this.movieTitle = movieTitle;
-    this.movieTotalEp = movieTotalEp;
-    this.movieYear = movieYear;
+    // this.movieCurrentEp = movieCurrentEp;
+    // this.movieDescription = movieDescription;
+    // this.movieLogo = movieLogo;
+    // this.movieM3U8 = movieM3U8;
+    // this.movieRating = movieRating;
+    // this.movieTitle = movieTitle;
+    // this.movieTotalEp = movieTotalEp;
+    // this.movieYear = movieYear;
   }
 
   @IsNotEmpty()
@@ -98,29 +98,29 @@ export class File extends BaseEntity {
   @Column()
   etag: string;
 
-  @Column()
-  movieCurrentEp: number;
+  // @Column()
+  // movieCurrentEp: number;
 
-  @Column()
-  movieDescription: string;
+  // @Column()
+  // movieDescription: string;
 
-  @IsNotEmpty()
-  @Column()
-  movieLogo: string;
+  // @IsNotEmpty()
+  // @Column()
+  // movieLogo: string;
 
-  @Column()
-  movieM3U8: string;
+  // @Column()
+  // movieM3U8: string;
 
-  @Column()
-  movieRating: string;
+  // @Column()
+  // movieRating: string;
 
-  @IsNotEmpty()
-  @Column()
-  movieTitle: string;
+  // @IsNotEmpty()
+  // @Column()
+  // movieTitle: string;
 
-  @Column()
-  movieTotalEp: number;
+  // @Column()
+  // movieTotalEp: number;
 
-  @Column()
-  movieYear: string;
+  // @Column()
+  // movieYear: string;
 }

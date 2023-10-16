@@ -1,4 +1,5 @@
 
+import { Film } from '@entities/film.entity';
 import {File} from '../entities/file.entity';
 import { DataSource, DataSourceOptions } from "typeorm";
 export const dataSourceOptions: DataSourceOptions = {
@@ -9,7 +10,7 @@ export const dataSourceOptions: DataSourceOptions = {
     password: 'postgres',
     database: 'postgres',
     synchronize: true,
-    entities: [File],
+    entities: [File, Film],
     migrations: ['./src/migrations/*.{ts,js}'],
     migrationsRun: true
 }

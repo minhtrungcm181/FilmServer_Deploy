@@ -49,14 +49,14 @@ export class FileRepository {
     const listOfSharedLink = allFileDB.map((file) => {
       return {
         url: `${host}/${encodeStringPathToBase64(file.id)}`,
-        movieCurrentEp: file.movieCurrentEp,
-        movieDescription: file.movieDescription,
-        movieLogo: file.movieLogo,
-        movieM3U8: file.movieM3U8,
-        movieRating: file.movieRating,
-        movieTitle: file.movieTitle,
-        movieTotalEp: file.movieTotalEp,
-        movieYear: file.movieYear,
+        // movieCurrentEp: file.movieCurrentEp,
+        // movieDescription: file.movieDescription,
+        // movieLogo: file.movieLogo,
+        // movieM3U8: file.movieM3U8,
+        // movieRating: file.movieRating,
+        // movieTitle: file.movieTitle,
+        // movieTotalEp: file.movieTotalEp,
+        // movieYear: file.movieYear,
       };
     });
 

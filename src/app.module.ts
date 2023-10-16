@@ -11,13 +11,14 @@ import {appValidationPipe} from './common/validation.pipe';
 import {PublicModule} from './public/public.module';
 import {AppController} from '@app.controller';
 import { dataSourceOptions } from '@config/data-source';
+import { FilmModule } from '@modules/film/film.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
 
     TypeOrmModule.forRoot(dataSourceOptions),
-
+    FilmModule,
     PublicModule,
     AuthModule,
     FileModule,

@@ -6,12 +6,9 @@ export interface IFileUpload extends Express.Multer.File {
   storageClass: string;
   location: string;
   etag: string;
-  movieCurrentEp: number;
-  movieDescription: string;
-  movieLogo: string;
-  movieM3U8: string;
-  movieRating: string;
-  movieTitle: string;
-  movieTotalEp: number;
-  movieYear: string;
+  fieldname: string,
+  originalname: string,
+  encoding: string,
+  mimetype: string,
+  size: number,
 }

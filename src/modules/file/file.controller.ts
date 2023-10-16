@@ -49,14 +49,14 @@ export class FileController {
       file.storageClass,
       file.location,
       file.etag,
-      data.movieCurrentEp,
-      data.movieDescription,
-      data.movieLogo,
-      data.movieM3U8,
-      data.movieRating,
-      data.movieTitle,
-      data.movieTotalEp,
-      data.movieYear,
+      // data.movieCurrentEp,
+      // data.movieDescription,
+      // data.movieLogo,
+      // data.movieM3U8,
+      // data.movieRating,
+      // data.movieTitle,
+      // data.movieTotalEp,
+      // data.movieYear,
     );
     if (newFile) {
       // await this.fileRepository.createFileRecord(newFile);

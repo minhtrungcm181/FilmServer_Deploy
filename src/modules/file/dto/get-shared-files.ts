@@ -4,19 +4,19 @@ export class GetSharedFilesDto {
   @IsNotEmpty()
   url: string;
 
-  movieCurrentEp: number;
+  // movieCurrentEp: number;
 
-  movieDescription: string;
+  // movieDescription: string;
 
-  movieLogo: string;
+  // movieLogo: string;
 
-  movieM3U8: string;
+  // movieM3U8: string;
 
-  movieRating: string;
+  // movieRating: string;
 
-  movieTitle: string;
+  // movieTitle: string;
 
-  movieTotalEp: number;
+  // movieTotalEp: number;
 
-  movieYear: string;
+  // movieYear: string;
 }
