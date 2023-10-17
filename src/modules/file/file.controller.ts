@@ -72,10 +72,8 @@ export class FileController {
   @Get('/d/:path')
   async downloadFile(@Param('path') path: string, @Res({passthrough: true}) res: Response) {
     const bucketName = this.configService.get<string>('S3_BUCKET');
-    const decodedId = decodeBase64PathToString(path);
-    const key = await this.fileRepository.getKeyOfFileById(decodedId);
-    const fileStream = await this.fileService.getFileFromS3ByFileName(bucketName, key);
-    const fileInfo = await this.fileRepository.getFileByKey(key);
+    const fileStream = await this.fileService.getFileFromS3ByFileName(bucketName, path);
+    const fileInfo = await this.fileRepository.getFileByKey(path);
     const {originalname, mimetype} = fileInfo;
 
     res.set({

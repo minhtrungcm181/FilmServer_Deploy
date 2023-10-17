@@ -5,26 +5,26 @@ import {BaseEntity} from '.';
 @Entity()
 export class Film extends BaseEntity{
     constructor(
-    movieCurrentEp: number,
-    movieDescription: string,
-    movieLogo: string,
-    movieM3U8: string,
-    movieRating: string,
-    movieTitle: string,
-    movieTotalEp: number,
-    movieYear: string,
-    movieUrl: string
+    // movieCurrentEp: number,
+    // movieDescription: string,
+    // movieLogo: string,
+    // movieM3U8: string,
+    // movieRating: string,
+    // movieTitle: string,
+    // movieTotalEp: number,
+    // movieYear: string,
+    // movieUrl: string
     ) {
         super()
-    this.movieCurrentEp = movieCurrentEp;
-    this.movieDescription = movieDescription;
-    this.movieLogo = movieLogo;
-    this.movieM3U8 = movieM3U8;
-    this.movieRating = movieRating;
-    this.movieTitle = movieTitle;
-    this.movieTotalEp = movieTotalEp;
-    this.movieYear = movieYear;
-    this.movieUrl = movieUrl;
+    // this.movieCurrentEp = movieCurrentEp;
+    // this.movieDescription = movieDescription;
+    // this.movieLogo = movieLogo;
+    // this.movieM3U8 = movieM3U8;
+    // this.movieRating = movieRating;
+    // this.movieTitle = movieTitle;
+    // this.movieTotalEp = movieTotalEp;
+    // this.movieYear = movieYear;
+    // this.movieUrl = movieUrl;
     }
     @Column()
     movieCurrentEp: number;
