@@ -14,5 +14,8 @@ export class FilmService{
     async createFilm(newFilm: Film) {
         return await this.filmRepository.save(newFilm);
     }
-    
+    async listAll(): Promise<Film[]> {
+        const listProcess = await this.filmRepository.find();
+        return listProcess;
+      }
 }
