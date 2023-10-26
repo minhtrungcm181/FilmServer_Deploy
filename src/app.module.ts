@@ -1,15 +1,14 @@
-import {AuthModule} from '@modules/auth/auth.module';
-import {CasdoorModule} from '@modules/casdoor/casdoor.module';
-import {FileModule} from '@modules/file/file.module';
-import {Logger, Module} from '@nestjs/common';
-import {ConfigModule} from '@nestjs/config';
-import {APP_FILTER, APP_PIPE} from '@nestjs/core';
-import {TypeOrmModule} from '@nestjs/typeorm';
-import {AppService} from './app.service';
-import {AppExceptionFilter} from './common/exception.filter';
-import {appValidationPipe} from './common/validation.pipe';
-import {PublicModule} from './public/public.module';
-import {AppController} from '@app.controller';
+import { AuthModule } from '@modules/auth/auth.module';
+import { FileModule } from '@modules/file/file.module';
+import { Logger, Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+import { APP_FILTER, APP_PIPE } from '@nestjs/core';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { AppService } from './app.service';
+import { AppExceptionFilter } from './common/exception.filter';
+import { appValidationPipe } from './common/validation.pipe';
+import { PublicModule } from './public/public.module';
+import { AppController } from '@app.controller';
 import { dataSourceOptions } from '@config/data-source';
 import { FilmModule } from '@modules/film/film.module';
 

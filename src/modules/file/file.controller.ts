@@ -1,5 +1,4 @@
-import {IFileUpload} from '@common/fileupload.interface';
-import {decodeBase64PathToString} from '@common/fileurl.strategy';
+import { IFileUpload } from '@common/fileupload.interface';
 import {
   Body,
   Controller,
@@ -9,22 +8,19 @@ import {
   Res,
   StreamableFile,
   UploadedFile,
-  UseFilters,
-  UseGuards,
-  UseInterceptors,
+  UseFilters, UseInterceptors
 } from '@nestjs/common';
-import {ConfigService} from '@nestjs/config';
-import {FileInterceptor} from '@nestjs/platform-express';
-import {Response} from 'express';
+import { ConfigService } from '@nestjs/config';
+import { FileInterceptor } from '@nestjs/platform-express';
+import { Response } from 'express';
 import 'multer';
-import {FormDataRequest} from 'nestjs-form-data';
-import {File} from '../../entities/file.entity';
-import {FileRepository} from './file.repository';
-import {FileService} from './file.service';
-import {GetSharedFilesDto} from './dto/get-shared-files';
-import {Public} from '@common/metadata';
-import {CookieGuard} from './cookie.guard';
-import {UnauthorizeFilter} from '@common/unauthorize.filter';
+import { FormDataRequest } from 'nestjs-form-data';
+import { File } from '../../entities/file.entity';
+import { FileRepository } from './file.repository';
+import { FileService } from './file.service';
+import { GetSharedFilesDto } from './dto/get-shared-files';
+import { Public } from '@common/metadata';
+import { UnauthorizeFilter } from '@common/unauthorize.filter';
 @Controller('file')
 export class FileController {
   constructor(

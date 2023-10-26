@@ -3445,6 +3445,13 @@
   dependencies:
     "type-fest" "^1.0.1"
 
+"custom-id@^1.2.0":
+  "integrity" "sha512-lL59dGGzd5cYL6Z1NPlPo0Lze5t3JcWKOiaLupGhYUxpPWa5ZduL5rEggBWU4JT29wM429UgYIiY89qzL7iMmQ=="
+  "resolved" "https://registry.npmjs.org/custom-id/-/custom-id-1.2.0.tgz"
+  "version" "1.2.0"
+  dependencies:
+    "math-random" "^1.0.4"
+
 "date-fns@^2.29.3":
   "integrity" "sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA=="
   "resolved" "https://registry.npmjs.org/date-fns/-/date-fns-2.29.3.tgz"
@@ -5906,6 +5913,11 @@
   "version" "1.0.12"
   dependencies:
     "tmpl" "1.0.5"
+
+"math-random@^1.0.4":
+  "integrity" "sha512-rUxjysqif/BZQH2yhd5Aaq7vXMSx9NdEsQcyA07uEzIvxgI7zIr33gGsh+RU0/XjmQpCW7RsVof1vlkvQVCK5A=="
+  "resolved" "https://registry.npmjs.org/math-random/-/math-random-1.0.4.tgz"
+  "version" "1.0.4"
 
 "media-typer@0.3.0":
   "integrity" "sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ=="

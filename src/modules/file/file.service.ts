@@ -1,10 +1,10 @@
-import {GetObjectCommand} from '@aws-sdk/client-s3';
-import {S3Service} from '@modules/s3/s3.service';
-import {Injectable} from '@nestjs/common';
-import {InjectRepository} from '@nestjs/typeorm';
-import {Readable} from 'stream';
-import {Repository} from 'typeorm';
-import {File} from '../../entities/file.entity';
+import { DeleteObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';
+import { S3Service } from '@modules/s3/s3.service';
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Readable } from 'stream';
+import { Repository } from 'typeorm';
+import { File } from '../../entities/file.entity';
 
 @Injectable()
 export class FileService {
@@ -23,5 +23,9 @@ export class FileService {
     const response = await this.s3service.client.send(getObjectCommand);
     const objectStream = response.Body as Readable;
     return objectStream;
+  }
+  async deleteFileFromS3ByFileName(bucketName: string, fileName: string){
+    const deleteObjectCommand = new DeleteObjectCommand({Bucket: bucketName, Key: fileName});
+    const response = await this.s3service.client.send(deleteObjectCommand);
   }
 }

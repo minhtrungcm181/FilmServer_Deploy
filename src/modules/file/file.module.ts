@@ -1,18 +1,18 @@
-import {CasdoorService} from '@modules/casdoor/casdoor.service';
-import {S3Module} from '@modules/s3/s3.module';
-import {S3Service} from '@modules/s3/s3.service';
-import {Module} from '@nestjs/common';
-import {ConfigModule, ConfigService} from '@nestjs/config';
-import {MulterModule} from '@nestjs/platform-express';
-import {TypeOrmModule} from '@nestjs/typeorm';
+import { CasdoorService } from '@modules/casdoor/casdoor.service';
+import { S3Module } from '@modules/s3/s3.module';
+import { S3Service } from '@modules/s3/s3.service';
+import { Module } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { MulterModule } from '@nestjs/platform-express';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import * as multerS3 from 'multer-s3';
-import {v4 as uuidv4} from 'uuid';
-import {CookieGuard} from './cookie.guard';
-import {File} from '../../entities/file.entity';
-import {FileController} from './file.controller';
-import {FileRepository} from './file.repository';
-import {FileService} from './file.service';
-import {NestjsFormDataModule} from 'nestjs-form-data';
+import { v4 as uuidv4 } from 'uuid';
+import { CookieGuard } from './cookie.guard';
+import { File } from '../../entities/file.entity';
+import { FileController } from './file.controller';
+import { FileRepository } from './file.repository';
+import { FileService } from './file.service';
+import { NestjsFormDataModule } from 'nestjs-form-data';
 
 @Module({
   controllers: [FileController],

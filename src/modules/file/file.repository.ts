@@ -1,9 +1,9 @@
-import {encodeStringPathToBase64} from '@common/fileurl.strategy';
+import { encodeStringPathToBase64 } from '@common/fileurl.strategy';
 import { File } from '@entities/file.entity';
-import {Injectable} from '@nestjs/common';
-import {InjectRepository} from '@nestjs/typeorm';
-import {FindOneOptions, Repository} from 'typeorm';
-import {GetSharedFilesDto} from './dto/get-shared-files';
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { FindOneOptions, Repository } from 'typeorm';
+import { GetSharedFilesDto } from './dto/get-shared-files';
 
 @Injectable()
 export class FileRepository {

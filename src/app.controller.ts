@@ -1,8 +1,6 @@
-import {Public} from '@common/metadata';
-import {CasdoorService} from '@modules/casdoor/casdoor.service';
-import {Controller, Post, Req, Res} from '@nestjs/common';
-import {ConfigService} from '@nestjs/config';
-import {Response} from 'express';
+import { Public } from '@common/metadata';
+import { Controller } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 
 @Public()
 @Controller()

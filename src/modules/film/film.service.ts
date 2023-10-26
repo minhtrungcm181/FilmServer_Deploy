@@ -2,7 +2,7 @@ import { Film } from "@entities/film.entity";
 import { S3Service } from "@modules/s3/s3.service";
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { Repository } from "typeorm";
+import { FindOneOptions, Repository } from "typeorm";
 
 @Injectable()
 export class FilmService{
@@ -18,4 +18,18 @@ export class FilmService{
         const listProcess = await this.filmRepository.find();
         return listProcess;
       }
+    async findOne(filmId: string): Promise<Film>{
+        const option: FindOneOptions<Film> = {where: {filmId: filmId}};
+        const filmFound = await this.filmRepository.findOne(option);
+        return filmFound;
+    }
+    async deleteFilm(filmId: string): Promise<any> {
+        const filmFound = await this.findOne(filmId);
+        if(filmFound) {
+            await this.filmRepository.delete(filmFound);
+        }
+    }
+    async editFilm(filmId: string, newData: Film): Promise<any>{
+        const process = await this.filmRepository.update({filmId: filmId}, newData);
+    }
 }

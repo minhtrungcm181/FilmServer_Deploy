@@ -27,6 +27,10 @@ export class Film extends BaseEntity{
     // this.movieUrl = movieUrl;
     }
     @Column()
+    @IsNotEmpty()
+    filmId: string;
+
+    @Column()
     movieCurrentEp: number;
   
     @Column()
@@ -53,6 +57,9 @@ export class Film extends BaseEntity{
     movieYear: string;
 
     @Column()
-    movieUrl: string
+    movieUrl: string;
+
+    @Column()
+    genre: string;
 
 }
