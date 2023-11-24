@@ -8,6 +8,7 @@ import { FilmService } from "./film.service";
 import { Film } from "@entities/film.entity";
 import * as customid from "custom-id";
 import { Response } from 'express';
+import { UnvalidUpload } from "@common/unvalidupload.filter";
 
 @Controller('film')
 export class FilmController {
@@ -20,12 +21,13 @@ export class FilmController {
   ) { }
 
   @Post('upload')
-  @UseFilters()
+  @UseFilters(UnvalidUpload)
   @UseInterceptors(AnyFilesInterceptor())
   async handleFilm(@UploadedFiles() files, @Body() data) {
     const host = this.configService.get<string>('HOST');
     const newFilm = new Film();
     const medias = [];
+    console.log("...uploading");
     for (const item of files) {
       if (item.mimetype == `video/mp4`) {
         const urlMp4 = `${host}/file/d/${item.key}`
@@ -51,6 +53,8 @@ export class FilmController {
     if (uploaded) { return HttpStatus.OK }
     else return HttpStatus.NOT_MODIFIED;
   }
+
+
   @Get('delete/:filmid')
   async deleteFilm(@Param('filmid') filmid: string): Promise<any> {
     const bucketName = this.configService.get<string>('S3_BUCKET');
@@ -67,6 +71,8 @@ export class FilmController {
     }
     return HttpStatus.EXPECTATION_FAILED;
   }
+
+  
   @Post('edit/:filmid')
   async editFilmInfo(@Param('filmid') filmid: string, @Body() data): Promise<any> {
     const newFilm = new Film();
@@ -82,9 +88,9 @@ export class FilmController {
   }
 
   @Get('list')
-  async getAllFilmDB(@Res() resp: Response): Promise<any> {
-    const allFileDB = await this.filmService.listAll()
-    await allFileDB.map((film) => {
+  async getAllFilmDB(): Promise<any> {
+    const allFilmDB = await this.filmService.listAll()
+     const resp = await allFilmDB.map((film) => {
       return {
         id: film.filmId,
         movieUrl: film.movieUrl,
@@ -96,8 +102,10 @@ export class FilmController {
         movieTitle: film.movieTitle,
         movieTotalEp: film.movieTotalEp,
         movieYear: film.movieYear,
+        genre: film.genre
       }
     })
+    return resp;
   }
 
   @Get('list/shared')

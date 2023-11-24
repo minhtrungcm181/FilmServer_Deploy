@@ -1,6 +1,6 @@
 import { Film } from "@entities/film.entity";
 import { S3Service } from "@modules/s3/s3.service";
-import { Injectable } from "@nestjs/common";
+import { HttpStatus, Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { FindOneOptions, Repository } from "typeorm";
 
@@ -31,5 +31,6 @@ export class FilmService{
     }
     async editFilm(filmId: string, newData: Film): Promise<any>{
         const process = await this.filmRepository.update({filmId: filmId}, newData);
+        if(!process) return HttpStatus.BAD_REQUEST;
     }
 }
