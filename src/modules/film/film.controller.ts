@@ -55,24 +55,26 @@ export class FilmController {
   }
 
 
-  @Get('delete/:filmid')
-  async deleteFilm(@Param('filmid') filmid: string): Promise<any> {
+  @Post('delete/:filmid')
+  async deleteFilm(@Param('filmid') filmid: string) {
+    console.log(filmid)
     const bucketName = this.configService.get<string>('S3_BUCKET');
     const film = await this.filmService.findOne(filmid);
-
     if (film) {
-      const keyMp4 = await this.getFileKey(film.movieUrl);
-      const keyJpeg = await this.getFileKey(film.movieLogo);
-      this.fileRepository.deleteFile(keyMp4);
-      this.fileRepository.deleteFile(keyJpeg);
+      let keyMp4 = await this.getFileKey(film.movieUrl);
+      let keyJpeg = await this.getFileKey(film.movieLogo);
+      console.log(keyJpeg);
       await this.fileService.deleteFileFromS3ByFileName(bucketName, keyMp4);
       await this.fileService.deleteFileFromS3ByFileName(bucketName, keyJpeg);
+      this.fileRepository.deleteFile(keyMp4);
+      this.fileRepository.deleteFile(keyJpeg);
       await this.filmService.deleteFilm(filmid);
+      return HttpStatus.OK
     }
     return HttpStatus.EXPECTATION_FAILED;
   }
 
-  
+
   @Post('edit/:filmid')
   async editFilmInfo(@Param('filmid') filmid: string, @Body() data): Promise<any> {
     const newFilm = new Film();
@@ -90,7 +92,7 @@ export class FilmController {
   @Get('list')
   async getAllFilmDB(): Promise<any> {
     const allFilmDB = await this.filmService.listAll()
-     const resp = await allFilmDB.map((film) => {
+    const resp = await allFilmDB.map((film) => {
       return {
         id: film.filmId,
         movieUrl: film.movieUrl,
@@ -146,9 +148,7 @@ export class FilmController {
                   MovieTotalEp: film.movieTotalEp,
                   MovieYear: film.movieYear,
                 };
-              }),
-            "video_url": "http://192.168.111.151:5000/file/d/61d9b505-df91-41ab-b765-91ad60b0ccc1"
-
+              })
           }
         ]
 

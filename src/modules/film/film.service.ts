@@ -24,10 +24,7 @@ export class FilmService{
         return filmFound;
     }
     async deleteFilm(filmId: string): Promise<any> {
-        const filmFound = await this.findOne(filmId);
-        if(filmFound) {
-            await this.filmRepository.delete(filmFound);
-        }
+        const filmFound = await this.filmRepository.delete({filmId})
     }
     async editFilm(filmId: string, newData: Film): Promise<any>{
         const process = await this.filmRepository.update({filmId: filmId}, newData);

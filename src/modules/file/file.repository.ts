@@ -34,8 +34,9 @@ export class FileRepository {
   }
 
   async deleteFile(key: string): Promise<boolean> {
-    const deleteProcess = await this.fileRepository.delete(key);
-    if (deleteProcess) return true;
+   
+    const deleteProcess = await this.fileRepository.delete({ key });
+    if (deleteProcess) console.log('file1');
     else return false;
   }
 
